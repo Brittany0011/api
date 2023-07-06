@@ -118,7 +118,7 @@ client.on('message', (topic, message) => {
   })
 
 //api//
-PORT = process.env.PORT | 8000;
+PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use("/", router);
 app.listen(PORT, () => {
