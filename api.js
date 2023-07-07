@@ -16,7 +16,7 @@ router.get("/realtime", async (req, res) => {
 
 router.get("/storedData/pre7Day", async (req, res) => {
   try {
-    const storedData = await StoredData.find().sort({id: -1}).limit(7).skip(1);
+    const storedData = await StoredData.find().sort({_id: -1}).limit(7).skip(1);
     console.log("數據已傳送", storedData);
     res.json(storedData);
   } catch (err) {
