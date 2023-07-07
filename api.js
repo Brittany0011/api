@@ -24,9 +24,9 @@ router.get("/storedData/pre7Day", async (req, res) => {
   }
 })
 
-router.get("/storedData/specificDate:date", async (req, res) => {
+router.get("/storedData/specificDate", async (req, res) => {
   try {
-    const storedData = await StoredData.find({date: date});
+    const storedData = await StoredData.find({date: req.query.date});
     console.log("數據已傳送", storedData);
     res.json(storedData);
   } catch (err) {
